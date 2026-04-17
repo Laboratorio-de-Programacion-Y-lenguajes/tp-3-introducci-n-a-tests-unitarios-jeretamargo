@@ -19,3 +19,8 @@ def test_sub_resta_positivos():
 #   - Restar dos números decimales (float)
 #
 # Pista: podés usar @pytest.mark.parametrize para probar varios casos a la vez.
+
+@pytest.mark.parametrize("a,b,expected", [(5, 4, 1),(0, 4, -4),(-4,-4,0),(-1.5,-1.5,0)])
+def test_add_parametrizado(a, b, expected):
+     assert sub(a, b) == expected
+

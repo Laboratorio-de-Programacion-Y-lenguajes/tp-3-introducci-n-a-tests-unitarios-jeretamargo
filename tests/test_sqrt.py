@@ -1,7 +1,7 @@
 """Tests para la función sqrt(x) -> float."""
 
 import pytest
-import math
+
 from src.calculator import sqrt
 
 
@@ -29,7 +29,7 @@ Esta serie de testeos tiene una funcion parametrizada con 2 vueltas:
 2da vuelta: comprueba que la raiz de un numero impar devuelva decimal
 """
 
-@pytest.mark.parametrize("a,expected", [(0,0.0 ),(5, math.sqrt(5))])
+@pytest.mark.parametrize("a,expected", [(0,0.0 ),(5, 2.23606797749979)])
 def test_add_parametrizado(a, expected):
      assert sqrt(a) == expected
 

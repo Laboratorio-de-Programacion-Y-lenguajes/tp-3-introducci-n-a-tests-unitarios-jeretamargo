@@ -19,6 +19,22 @@ def test_div_normal():
 #
 # Pista: para testear excepciones usá pytest.raises:
 #
-# def test_div_por_cero():
-#     with pytest.raises(ZeroDivisionError):
-#         div(10, 0)
+
+"""
+Esta serie de testeos tiene una funcion parametrizada con 2 vueltas:
+1era vuelta: comprueba que 5 / 2 devuelva 2.5 (resultado decimal)
+2da vuelta: comprueba que 4 / -2 devuelva -2 (division con negativos)
+
+"""
+
+@pytest.mark.parametrize("a,b,expected", [(5, 2, 2.5),(4,-2, -2)])
+def test_add_parametrizado(a, b, expected):
+     assert div(a, b) == expected
+
+def test_div_por_cero():
+     """
+     Este test comprueba que al dividir un numero en cero
+     se lance una excepcion de tipo "ZeroDivisionError"
+     """
+     with pytest.raises(ZeroDivisionError):
+         div(10, 0)
